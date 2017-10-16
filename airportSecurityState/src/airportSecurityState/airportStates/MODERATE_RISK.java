@@ -1,12 +1,10 @@
 package airportSecurityState;
 public class MODERATE_RISK implements AirportStateI{
-	public void addItem(){
-
+	airport air;
+	public MODERATE_RISK(airport newAir){
+		air = newAir;
 	}
-	public void addPassenger(){
-
-	}
-	public void addDay(){
+	public void tightenOrLoosenSecurity(String pas){
 
 	}
 }

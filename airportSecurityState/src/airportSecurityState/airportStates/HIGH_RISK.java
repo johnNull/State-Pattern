@@ -1,12 +1,11 @@
 package airportSecurityState;
 public class HIGH_RISK implements AirportStateI{
-	public void addItem(){
+	airport air;
+	public HIGH_RISK(airport newAir){
+		air = newAir;
+	}	
 
-	}
-	public void addPassenger(){
-
-	}
-	public void addDay(){
+	public void tightenOrLoosenSecurity(String pas){
 
 	}
 }
