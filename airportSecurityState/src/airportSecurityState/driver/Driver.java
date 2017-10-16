@@ -8,6 +8,12 @@ public class Driver{
 		else{
 			FileProcessor fp = new FileProcessor(args[0]);
 			Results results = new Results(args[1]);
+			airport air = new airport();
+			for(String s = fp.readLine(); s != "-1"; s = fp.readLine()){
+				air.tightenOrLoosenSecurity(s);
+				air.operate(results);
+			}
+			results.writeToFile();
 		}
 	}
 }
