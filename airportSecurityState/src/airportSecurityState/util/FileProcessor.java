@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import airportSecurityState.util.MyLogger;
 public class FileProcessor{
 	BufferedReader reader;
 	File file;
@@ -12,6 +13,8 @@ public class FileProcessor{
 	 * java-read-a-file-line-by-line-code-example/
 	 */
 	public FileProcessor(String dir){
+		MyLogger.writeMessage("Creating FileProcessor", MyLogger.DebugLevel.IN_RESULTS);
+		MyLogger.writeMessage("Creating FileProcessor", MyLogger.DebugLevel.CONSTRUCTOR);
 		file = new File(dir);
 		if(file.exists()){		
 			try{

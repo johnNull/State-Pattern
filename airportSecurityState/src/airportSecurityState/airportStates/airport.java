@@ -1,4 +1,5 @@
 package airportSecurityState;
+import airportSecurityState.util.MyLogger;
 
 public class airport{
 	AirportStateI LOW_RISK;
@@ -10,6 +11,7 @@ public class airport{
 	int avgTraffic, avgItems;
 
 	public airport(){
+		MyLogger.writeMessage("Creating airport", MyLogger.DebugLevel.CONSTRUCTOR);
 		LOW_RISK = new LOW_RISK(this);
 		MODERATE_RISK = new MODERATE_RISK(this);
 		HIGH_RISK = new HIGH_RISK(this);

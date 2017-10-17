@@ -1,12 +1,14 @@
 package airportSecurityState;
 import java.io.PrintWriter;
 import java.io.IOException;
+import airportSecurityState.util.MyLogger;
 public class Results implements FileDisplayInterface, StdoutDisplayInterface{
 	private String result = "", directory;
 	/**
 	 * Constructor for Results, sets output.txt directory
 	 */
 	public Results(String dir){
+		MyLogger.writeMessage("Creating Results instance", MyLogger.DebugLevel.CONSTRUCTOR);
 		directory = dir;
 	}
 
@@ -17,6 +19,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface{
 	 */	
 	public void writeToFile(){
 		try{
+			MyLogger.writeMessage("Creating/finding output file", MyLogger.DebugLevel.IN_RESULTS);
 			if(directory != null && directory.contains(".txt")){
 				PrintWriter writer = new PrintWriter(directory, "UTF-8");
 				writer.println(result);

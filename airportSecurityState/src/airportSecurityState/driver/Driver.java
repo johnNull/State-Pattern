@@ -9,20 +9,17 @@ public class Driver{
 		else{
 			try{
 				int debug = Integer.parseInt(args[2]);
-				if(debug > 0 && debug < 5)
+				if(debug >= 0 && debug <= 4)
 					MyLogger.setDebugValue(Integer.parseInt(args[2]));	
 				else
-					throw new IllegalArgumentException("debug level must be 0-4");
+					throw new IllegalArgumentException("Debug level must be 0-4");
 			}
 			catch(Exception e){
 				System.err.println("Incorrect debug level format");
 				e.printStackTrace(System.out);
 			}
-			MyLogger.writeMessage("Creating FileProcessor", MyLogger.DebugLevel.IN_RESULTS);
 			FileProcessor fp = new FileProcessor(args[0]);
-			MyLogger.writeMessage("Creating Results instance", MyLogger.DebugLevel.IN_RESULTS);
 			Results results = new Results(args[1]);
-			MyLogger.writeMessage("Creating airport", MyLogger.DebugLevel.CONSTRUCTOR);
 			airport air = new airport();
 
 			MyLogger.writeMessage("Reading file", MyLogger.DebugLevel.IN_RESULTS);
