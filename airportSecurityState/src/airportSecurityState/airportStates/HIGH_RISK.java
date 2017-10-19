@@ -12,6 +12,7 @@ public class HIGH_RISK implements AirportStateI{
 		ops = new int[]{2,4,6,8,10};
 	}	
 
+	//Changes state to MODERATE_RISK if average traffic and prohibited items are low enough
 	public void tightenOrLoosenSecurity(String pas){
 		p.parse(pas, air);
 		if(air.avgTraffic < 8 && air.avgItems < 2){
@@ -20,6 +21,7 @@ public class HIGH_RISK implements AirportStateI{
 		}
 	}
 
+	//Adds operations for this day to Results instance.
 	public void operate(Results r){
 		r.append(Arrays.toString(ops) + "\n");
 	}

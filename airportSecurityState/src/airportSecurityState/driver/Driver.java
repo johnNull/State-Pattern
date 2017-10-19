@@ -3,6 +3,7 @@ import airportSecurityState.*;
 import airportSecurityState.util.MyLogger;
 
 public class Driver{
+	//Take in input and out file and debug level. Create and run necessary tools to have airport operate.
 	public static void main(String args[]){
 		if(args == null || args.length != 3)
 				throw new IllegalArgumentException("Three arguments are required, input.txt, output.txt, and debug level");
